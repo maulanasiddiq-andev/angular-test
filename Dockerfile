@@ -22,7 +22,7 @@ RUN npm run build --prod
 FROM nginx:alpine
 
 # Copy built Angular app from Stage 1
-COPY --from=build /app/dist/test /usr/share/nginx/html
+COPY --from=build /app/dist/test/browser /usr/share/nginx/html
 
 # Copy custom Nginx configuration (optional but recommended for Angular routing)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
